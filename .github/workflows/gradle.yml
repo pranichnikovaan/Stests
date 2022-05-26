@@ -18,3 +18,5 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+      - name: Run tests
+        run: mvn test
