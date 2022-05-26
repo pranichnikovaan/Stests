@@ -103,30 +103,7 @@ public class ContactFormTest {
         Assert.assertNotEquals(status1, form.status.getValue());
     }
 
-    @Test
-    public void saveEventHasCorrectValues() {
-        ContactForm form = new ContactForm(companies, statuses);
-        Contact contact = new Contact();
-        form.setContact(contact);
-        form.firstName.setValue("John");
-        form.lastName.setValue("Doe");
-        form.company.setValue(company1);
-        form.email.setValue("john@doe.com");
-        form.status.setValue(status2);
 
-        AtomicReference<Contact> savedContactRef = new AtomicReference<>(null);
-        form.addListener(ContactForm.SaveEvent.class, e -> {
-            savedContactRef.set(e.getContact());
-        });
-        form.save.click();
-        Contact savedContact = savedContactRef.get();
-
-        Assert.assertEquals("John", savedContact.getFirstName());
-        Assert.assertEquals("Doe", savedContact.getLastName());
-        Assert.assertEquals("john@doe.com", savedContact.getEmail());
-        Assert.assertEquals(company1, savedContact.getCompany());
-        Assert.assertEquals(status2, savedContact.getStatus());
-    }
     
         @Test
     public void saveEventHasCorrectValues() {
