@@ -20,6 +20,5 @@ jobs:
           distribution: 'adopt'
       - name: Run tests
         run: mvn test
-      - name: Run tests2
-        run: mvn LoginIT
+
         
