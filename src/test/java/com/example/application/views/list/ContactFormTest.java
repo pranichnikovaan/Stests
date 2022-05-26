@@ -102,6 +102,17 @@ public class ContactFormTest {
         Assert.assertNotEquals(company2, form.company.getValue());
         Assert.assertNotEquals(status1, form.status.getValue());
     }
+    
+        @Test
+    public void NotformFieldsPopulated2() {
+        ContactForm form = new ContactForm(companies, statuses);
+        form.setContact(aaaaaaa);
+        Assert.assertNotEquals("Marc", form.firstName.getValue());
+        Assert.assertNotEquals("Usher", form.lastName.getValue());
+        Assert.assertNotEquals("marc@usher.com", form.email.getValue());
+        Assert.assertNotEquals(company2, form.company.getValue());
+        Assert.assertNotEquals(status1, form.status.getValue());
+    }
 
 
     
