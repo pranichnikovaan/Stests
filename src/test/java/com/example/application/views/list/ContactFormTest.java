@@ -149,8 +149,8 @@ public class ContactFormTest {
         Assert.assertNotEquals("John", savedContact.getFirstName());
         Assert.assertNotEquals("Doe", savedContact.getLastName());
         Assert.assertNotEquals("john@doe.com", savedContact.getEmail());
-        Assert.assertNotEquals(company1, savedContact.getCompany());
-        Assert.assertNotEquals(status2, savedContact.getStatus());
+        Assert.assertEquals(company1, savedContact.getCompany());
+        Assert.assertEquals(status2, savedContact.getStatus());
     }
 
     @Test
