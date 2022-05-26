@@ -63,6 +63,23 @@ public class ContactFormTest {
         Assert.assertNotEquals(status1, form.status.getValue());
 
     }
+    
+        @Test
+    public void formFieldsPopulatedByCom2() {
+        ContactForm form = new ContactForm(companies, statuses);
+        form.setCompany(company2);
+        Assert.assertNotEquals(company2, form.company.getValue());
+
+    }
+
+
+    @Test
+    public void formFieldsPopulatedBySt2() {
+        ContactForm form = new ContactForm(companies, statuses);
+        form.setStatus(status1);
+        Assert.assertNotEquals(status1, form.status.getValue());
+
+    }
 
     @Test
     public void formFieldsPopulated() {
